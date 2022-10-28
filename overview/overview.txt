@@ -1,9 +1,9 @@
-# Overview
+1. Overview
 
 Tracktinator is a mobile application used to track and rate movies.
 The user is able to check the movies watched, add a newly watched movie 
-and rate it, update a watched movie rating and its notes/review, or remove 
-a movie from the watched list.
+and rate it, update a watched movie rating and its notes, or remove a movie 
+from the watched list.
 
 The user will be shown three main views, one where a newly watched movie
 can be added, one where the watched movies can be looked at, and a detailed
@@ -11,32 +11,32 @@ view where watched movie details can be edited. Most views will also
 show display the cover images of movies. These are obtained only if the user is
 online through TMDB and may be stored locally for later use.
 
-# Problem Domain Overview
+2. Problem Domain Overview
 
 Persisted entity: `Movie`
 Fields:
-- `name: string` - The name of the movie
-- `cover_url: url (string)` - The url to the cover image of the movie
-- `rating: integer` - The rating given by the user
-- `notes: string` - Notes/review of the user
-- `watch_date: date` - Date when the movie was watched
+    - `name: string` - The name of the movie
+    - `cover_url: url (string)` - The url to the cover image of the movie
+    - `rating: integer` - The rating given by the user
+    - `notes: string` - Notes/review of the user
+    - `watch_date: date` - Date when the movie was watched
 
-# CRUD Operations
+3. CRUD Operations
 
 The application supports the following operations
 
-- Create: Add new movies to the list of watched movies
-- Read: View the set of watched movies
-- Update: Update ratings and review of watched movie
-- Delete: Delete movie from watched list
+    - Create: Add new movies to the list of watched movies
+    - Read: View the set of watched movies
+    - Update: Update ratings and review of watched movie
+    - Delete: Delete movie from watched list
 
-# Persistence
+4. Persistence
 
 All available operations will be persisted on a local SQL datbase
 and then be synced with a remote datbase. Cover images may be stored
 in cache memory locally.
 
-# Offline Handling
+5. Offline Handling
 
 The application should persist the content locally, outside of cover
 images if they are not available. While online, the local DB syncs with the 
@@ -54,15 +54,7 @@ available, otherwise some placeholder image is used.
 the application will detect that the device is able to connect again to the 
 server will push only the created entries, while the device was offline.
 
-# Design Mockup
+6. Design Mockup
 
 Designs for the 'Watched Movies View' and 'Detailed Movie View' are provided.
-
-## Watched Movies View
-
-![Watched Movies View](https://github.com/thesstefan/tracktinator/blob/main/mockup/watched_view.png)
-
-## Detailed Movie View
-
-![Detailed Movie View](https://github.com/thesstefan/tracktinator/blob/main/mockup/detailed_view.png)
 
