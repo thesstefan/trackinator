@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/movie_item"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical"
+    android:outlineProvider="background">
+
+    <FrameLayout
+        android:id="@+id/add_cover"
+        android:layout_width="match_parent"
+        android:layout_height="240dp">
+
+        <ImageView
+            android:id="@+id/movie_cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/movie_cover_description"
+            android:outlineProvider="background"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/cover1" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/movie_add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/movie_title_description"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#DCDCDC"
+            android:textSize="12sp" />
+
+        <RatingBar
+            android:id="@+id/movie_rating"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foregroundTintMode="screen"
+            android:max="5"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/ratingGray"
+            android:progressTint="@color/ratingYellow"
+            android:rating="4"
+            android:secondaryProgressTint="@color/ratingYellow"
+            android:stepSize="1" />
+    </LinearLayout>
+
+</LinearLayout>

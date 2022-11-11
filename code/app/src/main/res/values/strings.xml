@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Trackinator</string>
+    <string name="title_home">New</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title1">Wolf of Wall Street</string>
+    <string name="title2">Titanic</string>
+    <string name="title3">Forrest Gump</string>
+    <string name="title4">Limitless</string>
+    <string name="title5">The Great Gatsby</string>
+    <string name="title6">The Matrix</string>
+    <string name="movie_cover_description">Movie Cover</string>
+    <string name="movie_title_description">Movie Title</string>
+    <string name="title_detail">Details</string>
+    <string name="delete_button_description">Delete Movie</string>
+    <string name="rating_bar_description">Rate Movie</string>
+    <string name="movie_notes_description">Movie Notes</string>
+    <integer name="rating1">4</integer>
+    <integer name="rating2">2</integer>
+    <integer name="rating3">5</integer>
+    <integer name="rating4">3</integer>
+    <integer name="rating5">1</integer>
+    <integer name="rating6">2</integer>
+    <string name="cover1">cover1</string>
+    <string name="cover2">cover2</string>
+    <string name="cover3">cover3</string>
+    <string name="cover4">cover4</string>
+    <string name="cover5">placeholder</string>
+    <string name="cover6">placeholder</string>
+</resources>
