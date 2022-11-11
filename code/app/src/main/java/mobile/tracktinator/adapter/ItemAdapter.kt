@@ -45,7 +45,6 @@ class ItemAdapter(private val context: Context,
         }
         holder.itemView.setOnClickListener(onClickListener)
 
-
         val drawableId = "@drawable/${item.imageUrl}"
         val resource = context.resources.getIdentifier(drawableId, null, context.packageName)
         val drawable = context.getDrawable(resource)

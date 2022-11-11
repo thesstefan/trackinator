@@ -99,7 +99,6 @@
                             android:imeOptions="actionDone"
                             android:maxLength="40"
                             android:scrollHorizontally="false"
-                            android:text="Title"
                             android:textColor="@color/white"
                             android:textSize="30sp" />
                     </LinearLayout>
@@ -158,7 +157,6 @@
                             android:ems="10"
                             android:gravity="top|left"
                             android:inputType="textMultiLine"
-                            android:text="Notes"
                             android:textColor="@color/white"
                             android:textSize="30sp" />
 
