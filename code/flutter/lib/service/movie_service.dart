@@ -7,7 +7,7 @@ class MovieService extends ChangeNotifier {
   int newId = 10;
 
   MovieService(this.movieRepository) {
-    loadDefaultMovies();
+    // loadDefaultMovies();
   }
 
   void loadDefaultMovies() {
@@ -38,11 +38,11 @@ class MovieService extends ChangeNotifier {
 
   Future<void> updateMovie(int id, String date, String title,
                    String url, String notes, int rating) async {
-    await movieRepository.update(id, Movie(-1, date, title, url, notes, rating));
+    await movieRepository.update(id, Movie(id, date, title, url, notes, rating));
     notifyListeners();
   }
 
-  Future<Movie> getMovie(int id) async => await movieRepository.getMovie(id);
+  Future<Movie> getMovie(int id) async => await movieRepository.getById(id);
 
   Future<List<Movie>> getAllMovies() async => await movieRepository.getAll();
 }

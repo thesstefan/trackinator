@@ -15,7 +15,7 @@ class MemoryRepository<T extends Entity> implements Repository<T> {
   }
 
   @override
-  Future<T> getMovie(int id) async {
+  Future<T> getById(int id) async {
     return Future<T>.value(items[id]);
   }
 
