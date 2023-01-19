@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:trackinator_flutter_v2/model/movie.dart';
 import 'package:trackinator_flutter_v2/service/movie_service.dart';
+import 'package:trackinator_flutter_v2/service/socket_movie_service.dart';
 import 'package:trackinator_flutter_v2/view/movie_dashboard_view.dart';
 
 class MovieDetailsView extends StatefulWidget {
@@ -43,7 +44,7 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
     Widget yesButton = TextButton(
       child: const Text("Yes"),
       onPressed: () {
-        Provider.of<MovieService>(context, listen: false)
+        Provider.of<SocketMovieService>(context, listen: false)
             .removeMovie(widget.movieId)
             .whenComplete(() => Navigator.of(context)
                     .push(MaterialPageRoute<void>(builder: (context) {
@@ -83,7 +84,7 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: FutureBuilder<Movie>(
-            future: Provider.of<MovieService>(context, listen: true)
+            future: Provider.of<SocketMovieService>(context, listen: true)
                 .getMovie(widget.movieId),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
@@ -147,7 +148,7 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
 
                                   return;
                                 }
-                                Provider.of<MovieService>(context,
+                                Provider.of<SocketMovieService>(context,
                                         listen: false)
                                     .updateMovie(
                                         movie.id,

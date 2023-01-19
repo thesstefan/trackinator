@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trackinator_flutter_v2/model/movie.dart';
 import 'package:provider/provider.dart';
 import 'package:trackinator_flutter_v2/service/movie_service.dart';
+import 'package:trackinator_flutter_v2/service/socket_movie_service.dart';
 import 'package:trackinator_flutter_v2/view/movie_add_view.dart';
 
 import 'movie_item_view.dart';
@@ -29,7 +30,7 @@ class _MovieDashboardViewState extends State<MovieDashboardView> {
         ),
         body: FutureBuilder<List<Movie>>(
             future:
-                Provider.of<MovieService>(context, listen: true).getAllMovies(),
+                Provider.of<SocketMovieService>(context, listen: true).getAllMovies(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return GridView.builder(

@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:trackinator_flutter_v2/model/movie.dart';
 import 'package:trackinator_flutter_v2/service/movie_service.dart';
+import 'package:trackinator_flutter_v2/service/socket_movie_service.dart';
 import 'package:trackinator_flutter_v2/view/movie_dashboard_view.dart';
 
 class MovieAddView extends StatefulWidget {
@@ -94,7 +95,7 @@ class _MovieAddViewState extends State<MovieAddView> {
 
                       return;
                     }
-                    Provider.of<MovieService>(context, listen: false)
+                    Provider.of<SocketMovieService>(context, listen: false)
                         .addMovie(dateController.text, titleController.text,
                             urlController.text, notesController.text, rating)
                         .whenComplete(() => Navigator.of(context).push(

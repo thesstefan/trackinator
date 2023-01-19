@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:trackinator_flutter_v2/model/movie.dart';
 import 'package:trackinator_flutter_v2/service/movie_service.dart';
+import 'package:trackinator_flutter_v2/service/socket_movie_service.dart';
 import 'package:trackinator_flutter_v2/view/movie_details_view.dart';
 
 class MovieItemView extends StatelessWidget {
@@ -13,7 +14,7 @@ class MovieItemView extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder<Movie>(
         future:
-            Provider.of<MovieService>(context, listen: true).getMovie(movieId),
+            Provider.of<SocketMovieService>(context, listen: true).getMovie(movieId),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             var movie = snapshot.data!;

@@ -63,7 +63,8 @@ class MovieSqlRepository implements Repository<Movie> {
   Future<Movie> getById(int id) async {
     final db = await instance.database;
 
-    final List<Map<String, dynamic>> maps = await db.query(tableName, where: 'id = ?', whereArgs: [id]);
+    final List<Map<String, dynamic>> maps =
+        await db.query(tableName, where: 'id = ?', whereArgs: [id]);
     final map = maps[0];
 
     return Movie(
@@ -80,9 +81,7 @@ class MovieSqlRepository implements Repository<Movie> {
   Future<void> insert(Movie movie) async {
     final db = await instance.database;
 
-    await db.insert(
-        tableName,
-        movie.movieMap(),
+    await db.insert(tableName, movie.movieMap(),
         conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
@@ -96,5 +95,11 @@ class MovieSqlRepository implements Repository<Movie> {
       where: 'id = ?',
       whereArgs: [movie.id],
     );
+  }
+
+  Future<void> deleteAll() async {
+    final db = await instance.database;
+
+    await db.delete(tableName);
   }
 }

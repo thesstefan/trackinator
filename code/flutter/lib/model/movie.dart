@@ -22,4 +22,13 @@ class Movie extends Entity {
 
     return mapping;
   }
+
+  factory Movie.fromJson(Map<String, dynamic> json) => Movie(
+    json.containsKey('id') ? json['id'] : -1,
+    json['dateWatched'],
+    json['title'],
+    json['imageUrl'],
+    json['notes'],
+    json['rating']
+  );
 }

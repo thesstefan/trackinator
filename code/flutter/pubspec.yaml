@@ -40,6 +40,8 @@ dependencies:
   provider: ^6.0.4
   sqflite:
   path:
+  http:
+  socket_io_client:
 
 dev_dependencies:
   flutter_test:
